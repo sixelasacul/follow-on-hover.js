@@ -1,7 +1,7 @@
 module.exports = {
   purge: [
-    "./doc/tailwind.css",
-    "./doc/index.html"
+    "./docs/tailwind.css",
+    "./docs/index.html"
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {

@@ -6,12 +6,13 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://follow-on-hover.netlify.app/",
   "license": "MIT",
   "author": "Alexis Lucas <alexis.lucas1@viacesi.fr> (https://github.com/sixelasacul)",
   "scripts": {
     "build:tw": "npx tailwindcss-cli@latest build ./docs/tailwind.css -c ./tailwind.config.js -o ./docs/dist/tailwind.build.css",
     "build:docs": "yarn build:lib && yarn build:tw",
-    "build:docs:prod": "NODE_ENV=production yarn build:tw",
+    "build:docs:prod": "NODE_ENV=production yarn build:docs",
     "build:lib": "rollup -c",
     "dev:lib": "rollup -c -w",
     "dev": "concurrently \"yarn dev:lib\" \"yarn build:tw\" \"yarn serve:docs\"",
