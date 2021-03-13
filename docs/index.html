@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="dist/tailwind.build.css" />
+		<script src="dist/index.js"></script>
+		<script>
+			const { prepareAnimation, resetMargins } = followOnHover
+		</script>
+		<script src="customElements.js"></script>
+		<title>follow-on-hover.js</title>
+	</head>
+	<body>
+		<div
+			class="container mx-auto grid grid-cols-1 md:grid-cols-2 justify-items-center"
+		>
+			<div
+				class="md:col-span-2 flex flex-col justify-start items-center border-b border-blue-300"
+			>
+				<h3 class="text-3xl">follow-on-hover.js</h3>
+				<p>Works on desktop and mobile!</p>
+				<div class="section-container">
+					<div data-debug>
+						<button data-animate-hover class="classic">Left</button>
+					</div>
+					<div data-debug>
+						<button data-animate-hover class="classic">Right</button>
+					</div>
+					<div data-debug class="md:absolute md:top-0 md:right-0 md:m-4">
+						<button
+							data-animate-hover
+							class="px-4 py-2 m-2 border border-red-500 rounded-md text-red-700"
+							id="toggle-debugging"
+						>
+							Debug
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Buttons</h3>
+				<div class="section-container">
+					<div data-debug>
+						<button data-animate-hover class="classic">Cancel</button>
+					</div>
+					<div data-debug>
+						<button data-animate-hover class="classic">Confirm</button>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Buttons with irregular margins</h3>
+				<div class="section-container">
+					<div data-debug>
+						<button data-animate-hover class="irregular1">Accept</button>
+					</div>
+					<div data-debug>
+						<button data-animate-hover class="irregular2">Decline</button>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Divs</h3>
+				<div class="section-container">
+					<div data-debug>
+						<div data-animate-hover class="classic square"></div>
+					</div>
+					<div data-debug>
+						<div data-animate-hover class="classic square"></div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Divs with irregular margins</h3>
+				<div class="section-container">
+					<div data-debug>
+						<div data-animate-hover class="irregular1 square"></div>
+					</div>
+					<div data-debug>
+						<div data-animate-hover class="irregular2 square"></div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Texts</h3>
+				<div class="section-container">
+					<div data-debug>
+						<span data-animate-hover class="text"> Cancel </span>
+					</div>
+					<div data-debug>
+						<span data-animate-hover class="text"> Confirm </span>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Texts with irregular margins</h3>
+				<div class="section-container">
+					<div data-debug>
+						<span data-animate-hover class="text-irregular1"> Accept </span>
+					</div>
+					<div data-debug>
+						<span data-animate-hover class="text-irregular2"> Decline </span>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Custom elements</h3>
+				<div class="section-container">
+					<div data-debug>
+						<button is="classic-follow-button">Cancel</button>
+					</div>
+					<div data-debug>
+						<button is="classic-follow-button">Confirm</button>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<h3 class="text-xl">Custom elements with irregular margins</h3>
+				<div class="section-container">
+					<div data-debug>
+						<button is="irregular-follow-button" irregularity-type="1">
+							Accept
+						</button>
+					</div>
+					<div data-debug>
+						<button is="irregular-follow-button" irregularity-type="2">
+							Decline
+						</button>
+					</div>
+					<button id="toggle-irregularity">Toggle irregularity</button>
+				</div>
+			</div>
+		</div>
+		<script src="listeners.js"></script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "follow-on-hover.js",
+  "version": "0.0.1",
+  "main": "src/follow-on-hover.js",
+  "browser": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "author": "Alexis Lucas <alexis.lucas1@viacesi.fr> (https://github.com/sixelasacul)",
+  "scripts": {
+    "build:tw": "npx tailwindcss-cli@latest build ./docs/tailwind.css -c ./tailwind.config.js -o ./docs/dist/tailwind.build.css",
+    "build:docs": "yarn build:lib && yarn build:tw",
+    "build:docs:prod": "NODE_ENV=production yarn build:tw",
+    "build:lib": "rollup -c",
+    "dev:lib": "rollup -c -w",
+    "dev": "concurrently \"yarn dev:lib\" \"yarn build:tw\" \"yarn serve:docs\"",
+    "clean": "rm -rf dist/ && rm -rf docs/dist/",
+    "serve:docs": "http-server docs"
+  },
+  "volta": {
+    "node": "12.13.1",
+    "yarn": "1.22.10"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "http-server": "^0.12.3",
+    "rollup": "^2.41.2"
+  }
+}

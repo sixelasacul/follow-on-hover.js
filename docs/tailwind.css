@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+
+/* Section to showcase items */
+
+.section-container {
+	@apply flex flex-row justify-start items-center m-2;
+}
+
+.section {
+	@apply m-2;
+}
+
+/* Debug container (dashed borders around items) */
+
+.debug {
+	@apply border border-dashed;
+}
+
+/* Common utilities for items */
+
+.prepared-transitions {
+	@apply transition-all duration-100 ease-out;
+}
+
+.shape {
+	@apply border rounded-md border-blue-500 bg-white hover:bg-gray-100 active:bg-gray-200;
+}
+
+.box-spaces {
+	@apply px-4 py-2 m-2;
+}
+
+.irregular-box-spaces-1 {
+	@apply px-4 py-2 ml-1 mr-3 mt-3.5 mb-0.5;
+}
+
+.irregular-box-spaces-2 {
+	@apply px-4 py-2 ml-3 mr-1 mt-0.5 mb-3.5;
+}
+
+.base {
+	@apply prepared-transitions shape text-blue-700;
+}
+
+.classic {
+	@apply base box-spaces;
+}
+
+.irregular1 {
+	@apply base irregular-box-spaces-1;
+}
+
+.irregular2 {
+	@apply base irregular-box-spaces-2;
+}
+
+/* Only for texts */
+
+.base-text {
+	@apply prepared-transitions text-blue-700;
+}
+
+.text {
+	@apply base-text box-spaces;
+}
+
+.text-irregular1 {
+	@apply base-text irregular-box-spaces-1;
+}
+
+.text-irregular2 {
+	@apply base-text irregular-box-spaces-2;
+}
+
+/* Only for squared divs */
+
+.square {
+	@apply h-20 w-20;
+}
+
+@tailwind utilities;
